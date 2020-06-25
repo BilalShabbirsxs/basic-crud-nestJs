@@ -28,11 +28,13 @@ export class ClassesService {
         // can use slice here to make a copy
     }
 
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async getSingleClass(cid: string){
         const clas = await this.findClass(cid);
         return clas;
     }
 
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async updateClass(cid: string, title: string, subject:string){
         const updatedClass = await this.findClass(cid);
     
@@ -47,6 +49,7 @@ export class ClassesService {
         
     }
 
+    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     async removeClass(cid: string){
         const remClass = await this.classModel.deleteOne({"_id":cid}).exec();
         if(remClass.n===0){
