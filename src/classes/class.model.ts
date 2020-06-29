@@ -9,5 +9,5 @@ export const ClassSchema = new mongoose.Schema({
 export interface Class {
     id: string; 
     title: string;
-    subject: [],
+    subject: string,
 }
