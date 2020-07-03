@@ -8,10 +8,10 @@ export class ClassesController {
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     @Post()
     async addclass(
-        @Body('title') classTit: string, 
-        @Body('subject') classSub: string 
+        @Body('title') classTitle: string, 
+        @Body('subject') classSubject: string 
         ) {
-        const genid = await this.classesService.insertClass(classTit, classSub);
+        const genid = await this.classesService.insertClass(classTitle, classSubject);
         return {id: genid}
     }
 
@@ -30,8 +30,8 @@ export class ClassesController {
 
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     @Patch(':id')
-    async updateClass(@Param('id') cid: string, @Body('title') classTit: string, @Body('subject') classSub:string){
-        await this.classesService.updateClass(cid, classTit, classSub);
+    async updateClass(@Param('id') cid: string, @Body('title') classTitle: string, @Body('subject') classSubject:string){
+        await this.classesService.updateClass(cid, classTitle, classSubject);
         return "Updated";
     }
 
